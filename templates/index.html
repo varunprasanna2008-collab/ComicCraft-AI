@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+
+{% block title %}
+ComicCraft - Create Your Comic
+{% endblock %}
+
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                GENERATIVE AI • COMIC CREATOR
+            </p>
+
+            <h1>
+                Turn your imagination
+                into a comic.
+            </h1>
+
+            <p class="hero-description">
+                Describe your story and let ComicCraft
+                create a five-panel comic with narration,
+                dialogue, illustrations and a PDF export.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="form-section">
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <h2>
+                    Create Your Comic
+                </h2>
+
+                <p>
+                    Tell us about your story.
+                </p>
+
+            </div>
+
+
+            <form
+                action="/generate"
+                method="POST"
+                class="comic-form"
+                id="comicForm"
+            >
+
+                <div class="form-group">
+
+                    <label for="story_prompt">
+                        Story Prompt
+                    </label>
+
+                    <textarea
+                        id="story_prompt"
+                        name="story_prompt"
+                        rows="5"
+                        required
+                        placeholder="Example: A brave fox explores an enchanted forest and discovers a mysterious secret..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="character_name">
+                            Main Character Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="character_name"
+                            name="character_name"
+                            required
+                            placeholder="Example: Finn"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="setting">
+                            Setting
+                        </label>
+
+                        <select
+                            id="setting"
+                            name="setting"
+                            required
+                        >
+
+                            <option value="">
+                                Select setting
+                            </option>
+
+                            <option value="enchanted forest">
+                                Enchanted Forest
+                            </option>
+
+                            <option value="school">
+                                School
+                            </option>
+
+                            <option value="space">
+                                Space
+                            </option>
+
+                            <option value="future city">
+                                Future City
+                            </option>
+
+                            <option value="village">
+                                Village
+                            </option>
+
+                            <option value="underwater kingdom">
+                                Underwater Kingdom
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tone">
+                            Story Tone
+                        </label>
+
+                        <select
+                            id="tone"
+                            name="tone"
+                            required
+                        >
+
+                            <option value="">
+                                Select tone
+                            </option>
+
+                            <option value="light-hearted">
+                                Light-hearted
+                            </option>
+
+                            <option value="dramatic">
+                                Dramatic
+                            </option>
+
+                            <option value="funny">
+                                Funny
+                            </option>
+
+                            <option value="adventurous">
+                                Adventurous
+                            </option>
+
+                            <option value="mysterious">
+                                Mysterious
+                            </option>
+
+                            <option value="poetic">
+                                Poetic
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="art_style">
+                            Art Style
+                        </label>
+
+                        <select
+                            id="art_style"
+                            name="art_style"
+                            required
+                        >
+
+                            <option value="">
+                                Select art style
+                            </option>
+
+                            <option value="anime">
+                                Anime
+                            </option>
+
+                            <option value="comic book">
+                                Comic Book
+                            </option>
+
+                            <option value="pixel art">
+                                Pixel Art
+                            </option>
+
+                            <option value="watercolor">
+                                Watercolor
+                            </option>
+
+                            <option value="realistic">
+                                Realistic
+                            </option>
+
+                            <option value="cartoon">
+                                Cartoon
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                    id="generateButton"
+                >
+                    ✨ Generate My Comic
+                </button>
+
+                <p
+                    class="loading-message"
+                    id="loadingMessage"
+                >
+                    Creating your comic...
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
